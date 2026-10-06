@@ -134,7 +134,7 @@ if barstate.islast
             float  pct     = pa != 0 ? chg / pa * 100 : na
             int    bars    = pIdx.get(i + 1) - pIdx.get(i)
             string sign    = chg >= 0 ? "+" : ""
-            string barsTxt = na(bars) ? "" : "\n" + str.tostring(bars) + " bars"
+            string barsTxt = na(bars) ? "" : "\n" + str.tostring(bars) + " candles"
             string txt     = sign + str.tostring(chg, format.mintick) + " (" + sign + str.tostring(pct, "#.##") + "%)" + barsTxt
             labels.push(label.new(math.round((ta + tb) / 2), up ? top : bot, txt, xloc.bar_time,
                  style = up ? label.style_label_down : label.style_label_up,
