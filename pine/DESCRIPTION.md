@@ -7,6 +7,7 @@ HOW IT WORKS
 Swing points
 • When the indicator is added, TradingView asks you to click Point 1 to Point 4 on the chart. These are interactive time/price inputs, so you can later drag them on the chart or edit them in the settings.
 • Points are sorted by time, so the result doesn't depend on the order you click them in.
+• You are also asked to confirm "Show only on symbol". The drawings appear only on that symbol, so switching the chart to another symbol doesn't carry your swing points over to it. Leave it empty to draw on every symbol.
 • With "Snap points to bar high/low" enabled (the default), each point moves to the exact wick of the candle you clicked. It uses the high if the point is above its neighbors (a swing high) and the low if it is below them (a swing low).
 
 Leg boxes

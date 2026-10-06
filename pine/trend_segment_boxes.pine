@@ -16,6 +16,12 @@ float p3 = input.price(0.0, "", confirm = true, inline = "p3")
 int   t4 = input.time(timestamp("01 Apr 2024 00:00"), "Point 4", confirm = true, inline = "p4")
 float p4 = input.price(0.0, "", confirm = true, inline = "p4")
 
+// Indicators belong to the chart layout, not to a symbol, so TradingView keeps this one on the
+// chart when you switch symbols. The drawings are only shown on the symbol chosen here.
+string lockSym = input.symbol("", "Show only on symbol", confirm = true,
+     tooltip = "The swing points belong to this symbol. On any other symbol nothing is drawn. Leave empty to draw on every symbol.")
+bool onSymbol = lockSym == "" or lockSym == syminfo.tickerid or lockSym == syminfo.prefix + ":" + syminfo.ticker
+
 // ───── Style ─────
 string GRP = "Style"
 bool  snapToWicks = input.bool(true, "Snap points to bar high/low", group = GRP,
@@ -125,6 +131,7 @@ if barstate.islast
     oppLine.delete()
     oppLabel.delete()
 
+if barstate.islast and onSymbol
     for i = 0 to LAST - 1
         int   ta  = pTime.get(i)
         int   tb  = pTime.get(i + 1)

@@ -6,7 +6,8 @@ green for up legs, red for down legs. Labels show the price change, % change and
 ## Install
 1. In TradingView, open the **Pine Editor**, paste in `trend_segment_boxes.pine`, and click **Add to chart**.
 2. TradingView then asks you to click **Point 1** to **Point 4** on the chart, e.g. swing low, high, low, high. The points are sorted by time, so click order does not affect the colors.
-3. To adjust afterwards, select the indicator and drag the point handles, or edit the times/prices in its settings.
+3. TradingView also asks you to confirm **Show only on symbol**. Set it to the symbol you placed the points on (for example `NASDAQ:AAPL`). The indicator stays on the chart when you switch symbols, because TradingView keeps indicators per chart layout, but it draws nothing on other symbols. Leave it empty to draw on every symbol.
+4. To adjust afterwards, select the indicator and drag the point handles, or edit the times/prices in its settings.
 
 ## Why not the Polyline tool?
 Pine Script can't read drawings you made with TradingView's own tools (Polyline, Path, Trend Line…).
