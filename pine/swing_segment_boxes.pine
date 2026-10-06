@@ -105,6 +105,7 @@ if barstate.islast
             string sign    = chg >= 0 ? "+" : ""
             string barsTxt = na(bars) ? "" : "\n" + str.tostring(bars) + " candles"
             string txt     = sign + str.tostring(chg, format.mintick) + " (" + sign + str.tostring(pct, "#.##") + "%)" + barsTxt
-            labels.push(label.new(math.round((ta + tb) / 2), up ? top : bot, txt, xloc.bar_time,
-                 style = up ? label.style_label_down : label.style_label_up,
+            // Centre the label in the box: midway between the two swing points in time and price.
+            labels.push(label.new(math.round((ta + tb) / 2), (top + bot) / 2, txt, xloc.bar_time,
+                 style = label.style_label_center,
                  color = color.new(color.white, 100), textcolor = up ? upLine : dnLine, size = size.small))
