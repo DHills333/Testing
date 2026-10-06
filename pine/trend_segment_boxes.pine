@@ -28,14 +28,39 @@ color dnBorder = input.color(color.new(color.black, 30), "border", inline = "dn"
 color dnLine   = input.color(color.red, "line", inline = "dn", group = GRP)
 bool  showLines  = input.bool(true, "Show diagonal lines", group = GRP)
 bool  showLabels = input.bool(true, "Show change labels", group = GRP)
+string chgSizeIn = input.string("Small", "Change label size", options = ["Tiny", "Small", "Normal", "Large", "Huge"], group = GRP)
 
 string GRP_CTRL = "Controlling swing"
 bool  showCtrl  = input.bool(true, "Show controlling swing (CSH/CSL)", group = GRP_CTRL,
      tooltip = "Uptrend (latest structure break is a higher high): the swing low that made that high. Downtrend (latest break is a lower low): the swing high that made that low. A close beyond it marks it as broken.")
-color ctrlColor = input.color(color.blue, "Controlling swing colour", group = GRP_CTRL)
+color  ctrlColor   = input.color(color.blue, "Line", inline = "ctrl", group = GRP_CTRL)
+string ctrlStyleIn = input.string("Dashed", "", options = ["Solid", "Dashed", "Dotted"], inline = "ctrl", group = GRP_CTRL)
+int    ctrlWidth   = input.int(2, "Width", minval = 1, maxval = 5, inline = "ctrl", group = GRP_CTRL)
 bool  showOpp   = input.bool(true, "Show prior opposite swing (PSH/PSL)", group = GRP_CTRL,
      tooltip = "The swing just before the controlling swing, on the other side: the prior swing high opposite a controlling low, or the prior swing low opposite a controlling high. This is the level the break of structure went through.")
-color oppColor  = input.color(color.blue, "Prior swing colour", group = GRP_CTRL)
+color  oppColor    = input.color(color.blue, "Line", inline = "opp", group = GRP_CTRL)
+string oppStyleIn  = input.string("Dashed", "", options = ["Solid", "Dashed", "Dotted"], inline = "opp", group = GRP_CTRL)
+int    oppWidth    = input.int(2, "Width", minval = 1, maxval = 5, inline = "opp", group = GRP_CTRL)
+string swingSizeIn = input.string("Small", "Swing label size", options = ["Tiny", "Small", "Normal", "Large", "Huge"], group = GRP_CTRL)
+
+toSize(string s) =>
+    switch s
+        "Tiny"   => size.tiny
+        "Normal" => size.normal
+        "Large"  => size.large
+        "Huge"   => size.huge
+        => size.small
+
+toLineStyle(string s) =>
+    switch s
+        "Solid"  => line.style_solid
+        "Dotted" => line.style_dotted
+        => line.style_dashed
+
+chgSize   = toSize(chgSizeIn)
+swingSize = toSize(swingSizeIn)
+ctrlStyle = toLineStyle(ctrlStyleIn)
+oppStyle  = toLineStyle(oppStyleIn)
 
 // ───── Put the points in time order ─────
 // Points are sorted by time so each leg's direction (and colour) always follows the chart from
@@ -127,7 +152,7 @@ if barstate.islast
             int    midX    = byBar ? math.round((pIdx.get(i) + pIdx.get(i + 1)) / 2) : math.round((ta + tb) / 2)
             labels.push(label.new(midX, up ? top : bot, txt, byBar ? xloc.bar_index : xloc.bar_time,
                  style = up ? label.style_label_down : label.style_label_up,
-                 color = color.new(color.white, 100), textcolor = up ? upLine : dnLine, size = size.small))
+                 color = color.new(color.white, 100), textcolor = up ? upLine : dnLine, size = chgSize))
 
     // ───── Controlling swing ─────
     // Walk back from the newest point to the latest break of structure: a swing high above the
@@ -175,11 +200,11 @@ if barstate.islast
             int    x2     = broken ? brokeAt : bar_index
             if showCtrl
                 ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
-                     broken ? extend.none : extend.right, ctrlColor, line.style_dashed, 2)
+                     broken ? extend.none : extend.right, ctrlColor, ctrlStyle, ctrlWidth)
                 // Vertical label at the swing point: below a low, above a high.
                 ctrlLabel := label.new(x1, lvl, name + "\n" + str.tostring(lvl, format.mintick) + (broken ? "\nbroken" : ""), xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_up : label.style_label_down,
-                     color = color.new(color.white, 100), textcolor = ctrlColor, size = size.small)
+                     color = color.new(color.white, 100), textcolor = ctrlColor, size = swingSize)
 
             // Prior opposite swing: the swing just before the controlling one (a high before a
             // controlling low, or a low before a controlling high), i.e. the level that was broken.
@@ -188,7 +213,7 @@ if barstate.islast
                 float  oLvl  = pointPrice(opp)
                 int    o1    = pIdx.get(opp)
                 string oName = ctrlIsLow ? "P\nS\nH" : "P\nS\nL"
-                oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, line.style_dashed, 2)
+                oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, oppStyle, oppWidth)
                 oppLabel := label.new(o1, oLvl, oName + "\n" + str.tostring(oLvl, format.mintick), xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_down : label.style_label_up,
-                     color = color.new(color.white, 100), textcolor = oppColor, size = size.small)
+                     color = color.new(color.white, 100), textcolor = oppColor, size = swingSize)
