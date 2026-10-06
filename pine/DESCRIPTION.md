@@ -7,12 +7,12 @@ HOW IT WORKS
 Swing points
 • When the indicator is added, TradingView asks you to click Point 1 to Point 4 on the chart. These are interactive time/price inputs, so you can later drag them on the chart or edit them in the settings.
 • Points are sorted by time, so the result doesn't depend on the order you click them in.
-• With "Snap points to bar high/low" enabled (the default), each point moves to the exact wick of the candle you clicked. It uses the high if the point is above its neighbours (a swing high) and the low if it is below them (a swing low).
+• With "Snap points to bar high/low" enabled (the default), each point moves to the exact wick of the candle you clicked. It uses the high if the point is above its neighbors (a swing high) and the low if it is below them (a swing low).
 
 Leg boxes
 • Each leg between two consecutive points is drawn as a box spanning the leg's price range and time.
-• Rising legs use the "Up" colours and falling legs use the "Down" colours. A diagonal line connects the two swing points.
-• A label on each leg shows the price change, the percentage change and the number of candles in the leg. It is centred on the leg, above the box for up legs and below it for down legs.
+• Rising legs use the "Up" colors and falling legs use the "Down" colors. A diagonal line connects the two swing points.
+• A label on each leg shows the price change, the percentage change and the number of candles in the leg. It is centered on the leg, above the box for up legs and below it for down legs.
 
 Controlling swing (CSH / CSL)
 • The script looks back from the newest point for the most recent break of structure among your four points. That is a swing high above the previous swing high (a higher high) or a swing low below the previous swing low (a lower low).
@@ -33,14 +33,13 @@ HOW TO USE IT
 
 SETTINGS
 
-• Style: snap to wicks; fill, border and line colours for up and down legs; show/hide diagonal lines and change labels; change label size.
-• Controlling swing: show/hide the CSH/CSL and the PSH/PSL lines; colour, style (solid, dashed or dotted) and width of each line; swing label size.
+• Style: snap to wicks; fill, border and line colors for up and down legs; show/hide diagonal lines and change labels; change label size.
+• Controlling swing: show/hide the CSH/CSL and the PSH/PSL lines; color, style (solid, dashed or dotted) and width of each line; swing label size.
 
 NOTES AND LIMITATIONS
 
 • Everything drawn depends on the points you choose. Different swing choices produce different boxes and levels.
 • The script works on any symbol and timeframe. Points snap to the candle under the selected time, so changing the timeframe can move a point to a different candle.
 • The script can't read drawings made with TradingView's own drawing tools. Its points are set only through its own inputs.
-• The labels stack the letters vertically, because Pine Script labels can't rotate text.
 
 This tool is for chart analysis and education. It doesn't predict future price movement and isn't financial advice.

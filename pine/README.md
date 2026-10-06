@@ -5,7 +5,7 @@ green for up legs, red for down legs. Labels show the price change, % change and
 
 ## Install
 1. In TradingView, open the **Pine Editor**, paste in `trend_segment_boxes.pine`, and click **Add to chart**.
-2. TradingView then asks you to click **Point 1** to **Point 4** on the chart, e.g. swing low, high, low, high. The points are sorted by time, so click order does not affect the colours.
+2. TradingView then asks you to click **Point 1** to **Point 4** on the chart, e.g. swing low, high, low, high. The points are sorted by time, so click order does not affect the colors.
 3. To adjust afterwards, select the indicator and drag the point handles, or edit the times/prices in its settings.
 
 ## Why not the Polyline tool?
@@ -16,7 +16,7 @@ To chain more legs, add the indicator again and start its Point 1 where the prev
 
 ## Options
 - **Snap points to bar high/low**: moves each point to the exact wick of the bar you clicked (high for swing highs, low for swing lows).
-- Fill, border and line colours for up and down legs.
+- Fill, border and line colors for up and down legs.
 - Toggle the diagonal lines and change labels, and set the change label size (tiny to huge).
 
 ## Controlling swing
@@ -24,8 +24,10 @@ The indicator marks the controlling swing with a dashed blue line:
 - **Uptrend** (the latest structure break is a higher high): the controlling swing low (**CSL**) is the swing low that launched that higher high.
 - **Downtrend** (the latest structure break is a lower low): the controlling swing high (**CSH**) is the swing high that launched that lower low.
 
-The line extends right until a candle closes beyond it. The line then stops at that candle and the label adds "broken". If the four points make no higher high or lower low (a range), nothing is marked. It also marks the **prior opposite swing** with a dashed blue line: the swing just before the controlling one, on the other side. That's the prior swing high (**PSH**) for a CSL, or the prior swing low (**PSL**) for a CSH. It's the level the break of structure went through, and the line extends right.
+The line extends right until a candle closes beyond it. The line then stops at that candle and the label adds "broken". If the four points make no higher high or lower low (a range), nothing is marked.
 
-Each label sits on its swing point, below a low and above a high. The letters are stacked one per line so it reads vertically. Pine can't rotate label text.
+It also marks the **prior opposite swing** with a dashed blue line: the swing just before the controlling one, on the other side. That's the prior swing high (**PSH**) for a CSL, or the prior swing low (**PSL**) for a CSH. It's the level the break of structure went through, and the line extends right.
 
-Under **Controlling swing** in the settings you can turn either line off and set its colour, style (solid, dashed or dotted) and width. You can also set the swing label size there.
+Each label sits on its line just to the right of the swing point: under the line for a low, over it for a high.
+
+Under **Controlling swing** in the settings you can turn either line off and set its color, style (solid, dashed or dotted) and width. You can also set the swing label size there.
