@@ -1,20 +1,37 @@
 //@version=6
-indicator("Swing Segment Boxes", "SwingBoxes", overlay = true, max_boxes_count = 20, max_lines_count = 20, max_labels_count = 20)
+indicator("Swing Segment Boxes", "SwingBoxes", overlay = true, max_boxes_count = 50, max_lines_count = 50, max_labels_count = 50)
 
 // Pine Script cannot read drawings made with TradingView's own tools (Polyline, Path, etc.).
-// Instead, the four swing points are "interactive inputs": with `confirm = true`, TradingView
-// asks you to click each point on the chart when the indicator is added. Afterwards, select the
-// indicator and drag its handles to move the points, or edit them in the settings dialog.
+// Instead, points 1-4 are "interactive inputs": with `confirm = true`, TradingView asks you to
+// click each one on the chart when the indicator is added. Afterwards, select the indicator and
+// drag its handles to move them, or edit them in the settings dialog.
+//
+// Points 5-8 are optional. TradingView prompts for every `confirm = true` input when the indicator
+// is added, so they can't be optional clicks; instead, raise "Number of points" and set their
+// date/time in the settings. Leave a price at 0 to place it automatically on the bar's high or low.
 
 // ───── Swing points ─────
-int   t1 = input.time(timestamp("01 Jan 2024 00:00"), "Point 1", confirm = true, inline = "p1")
-float p1 = input.price(0.0, "", confirm = true, inline = "p1")
-int   t2 = input.time(timestamp("01 Feb 2024 00:00"), "Point 2", confirm = true, inline = "p2")
-float p2 = input.price(0.0, "", confirm = true, inline = "p2")
-int   t3 = input.time(timestamp("01 Mar 2024 00:00"), "Point 3", confirm = true, inline = "p3")
-float p3 = input.price(0.0, "", confirm = true, inline = "p3")
-int   t4 = input.time(timestamp("01 Apr 2024 00:00"), "Point 4", confirm = true, inline = "p4")
-float p4 = input.price(0.0, "", confirm = true, inline = "p4")
+string GRP_PTS = "Swing points"
+int   t1 = input.time(timestamp("01 Jan 2024 00:00"), "Point 1", confirm = true, inline = "p1", group = GRP_PTS)
+float p1 = input.price(0.0, "", confirm = true, inline = "p1", group = GRP_PTS)
+int   t2 = input.time(timestamp("01 Feb 2024 00:00"), "Point 2", confirm = true, inline = "p2", group = GRP_PTS)
+float p2 = input.price(0.0, "", confirm = true, inline = "p2", group = GRP_PTS)
+int   t3 = input.time(timestamp("01 Mar 2024 00:00"), "Point 3", confirm = true, inline = "p3", group = GRP_PTS)
+float p3 = input.price(0.0, "", confirm = true, inline = "p3", group = GRP_PTS)
+int   t4 = input.time(timestamp("01 Apr 2024 00:00"), "Point 4", confirm = true, inline = "p4", group = GRP_PTS)
+float p4 = input.price(0.0, "", confirm = true, inline = "p4", group = GRP_PTS)
+
+string GRP_EXTRA = "Extra points (optional)"
+int   N  = input.int(4, "Number of points", minval = 4, maxval = 8, group = GRP_EXTRA,
+     tooltip = "Points 5-8 are only used when this is raised above 4. Set their date/time below; leave the price at 0 to snap to the bar's high or low automatically.")
+int   t5 = input.time(timestamp("01 May 2024 00:00"), "Point 5", inline = "p5", group = GRP_EXTRA)
+float p5 = input.price(0.0, "", inline = "p5", group = GRP_EXTRA)
+int   t6 = input.time(timestamp("01 Jun 2024 00:00"), "Point 6", inline = "p6", group = GRP_EXTRA)
+float p6 = input.price(0.0, "", inline = "p6", group = GRP_EXTRA)
+int   t7 = input.time(timestamp("01 Jul 2024 00:00"), "Point 7", inline = "p7", group = GRP_EXTRA)
+float p7 = input.price(0.0, "", inline = "p7", group = GRP_EXTRA)
+int   t8 = input.time(timestamp("01 Aug 2024 00:00"), "Point 8", inline = "p8", group = GRP_EXTRA)
+float p8 = input.price(0.0, "", inline = "p8", group = GRP_EXTRA)
 
 // ───── Style ─────
 string GRP = "Style"
@@ -29,14 +46,15 @@ color dnLine   = input.color(color.red, "line", inline = "dn", group = GRP)
 bool  showLines  = input.bool(true, "Show diagonal lines", group = GRP)
 bool  showLabels = input.bool(true, "Show change labels", group = GRP)
 
-// ───── Put the points in time order ─────
+// ───── Put the active points in time order ─────
 // Points are sorted by time so each leg's direction (and colour) always follows the chart from
-// left to right, even if the points were clicked or dragged out of order.
-int N    = 4
+// left to right, even if the points were clicked, dragged or entered out of order.
 int LAST = N - 1
 
-array<int>   rawTime  = array.from(t1, t2, t3, t4)
-array<float> rawPrice = array.from(p1, p2, p3, p4)
+array<int>   allTime  = array.from(t1, t2, t3, t4, t5, t6, t7, t8)
+array<float> allPrice = array.from(p1, p2, p3, p4, p5, p6, p7, p8)
+array<int>   rawTime  = allTime.slice(0, N)
+array<float> rawPrice = allPrice.slice(0, N)
 array<int>   sortIdx  = rawTime.sort_indices(order.ascending)
 array<int>   pTime    = array.new<int>()
 array<float> pPrice   = array.new<float>()
@@ -45,28 +63,15 @@ for k in sortIdx
     pPrice.push(rawPrice.get(k))
 
 // ───── Locate the bar under each point ─────
-var array<int>   pIdx  = array.new<int>(N, na)
-var array<float> pHigh = array.new<float>(N, na)
-var array<float> pLow  = array.new<float>(N, na)
+var array<int>   pIdx  = array.new<int>(8, na)
+var array<float> pHigh = array.new<float>(8, na)
+var array<float> pLow  = array.new<float>(8, na)
 
 for i = 0 to LAST
     if na(pIdx.get(i)) and time >= pTime.get(i)
         pIdx.set(i, bar_index)
         pHigh.set(i, high)
         pLow.set(i, low)
-
-// Price of point `i`, optionally snapped to its bar's high/low depending on whether it is a
-// swing high (above its neighbours) or a swing low (below its neighbours).
-pointPrice(int i) =>
-    float raw    = pPrice.get(i)
-    float result = raw
-    if snapToWicks and not na(pIdx.get(i))
-        float prevP  = i > 0 ? pPrice.get(i - 1) : na
-        float nextP  = i < LAST ? pPrice.get(i + 1) : na
-        bool  isHigh = (na(prevP) or raw >= prevP) and (na(nextP) or raw >= nextP)
-        bool  isLow  = (na(prevP) or raw <= prevP) and (na(nextP) or raw <= nextP)
-        result := isHigh ? pHigh.get(i) : isLow ? pLow.get(i) : raw
-    result
 
 // ───── Draw ─────
 var array<box>   boxes  = array.new<box>()
@@ -84,11 +89,37 @@ if barstate.islast
     lines.clear()
     labels.clear()
 
+    // Resolve points left at price 0: put them on the bar's low after an up leg, or on its
+    // high after a down leg, so the swings keep alternating.
+    array<float> base = array.new<float>(N, na)
+    for i = 0 to LAST
+        float raw = pPrice.get(i)
+        if raw > 0
+            base.set(i, raw)
+        else if not na(pIdx.get(i))
+            bool afterUp = i >= 2 ? base.get(i - 1) > base.get(i - 2) : i == 1 ? pHigh.get(i) < base.get(0) : true
+            base.set(i, afterUp ? pLow.get(i) : pHigh.get(i))
+
+    // Optionally snap each point to its bar's high or low, depending on whether it is a swing
+    // high (above its neighbours) or a swing low (below its neighbours).
+    array<float> price = base.copy()
+    if snapToWicks
+        for i = 0 to LAST
+            float p = base.get(i)
+            if not na(p) and not na(pIdx.get(i))
+                float prevP  = i > 0 ? base.get(i - 1) : na
+                float nextP  = i < LAST ? base.get(i + 1) : na
+                bool  isHigh = (na(prevP) or p >= prevP) and (na(nextP) or p >= nextP)
+                bool  isLow  = (na(prevP) or p <= prevP) and (na(nextP) or p <= nextP)
+                price.set(i, isHigh ? pHigh.get(i) : isLow ? pLow.get(i) : p)
+
     for i = 0 to LAST - 1
-        int   ta  = pTime.get(i)
-        int   tb  = pTime.get(i + 1)
-        float pa  = pointPrice(i)
-        float pb  = pointPrice(i + 1)
+        int   ta = pTime.get(i)
+        int   tb = pTime.get(i + 1)
+        float pa = price.get(i)
+        float pb = price.get(i + 1)
+        if na(pa) or na(pb)
+            continue
         bool  up  = pb >= pa
         float top = math.max(pa, pb)
         float bot = math.min(pa, pb)
