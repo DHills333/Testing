@@ -13,6 +13,8 @@ int   t2 = input.time(timestamp("01 Feb 2024 00:00"), "Point 2", confirm = true,
 float p2 = input.price(0.0, "", confirm = true, inline = "p2")
 int   t3 = input.time(timestamp("01 Mar 2024 00:00"), "Point 3", confirm = true, inline = "p3")
 float p3 = input.price(0.0, "", confirm = true, inline = "p3")
+int   t4 = input.time(timestamp("01 Apr 2024 00:00"), "Point 4", confirm = true, inline = "p4")
+float p4 = input.price(0.0, "", confirm = true, inline = "p4")
 
 // ───── Style ─────
 string GRP = "Style"
@@ -27,15 +29,27 @@ color dnLine   = input.color(color.red, "line", inline = "dn", group = GRP)
 bool  showLines  = input.bool(true, "Show diagonal lines", group = GRP)
 bool  showLabels = input.bool(true, "Show change labels", group = GRP)
 
+// ───── Put the points in time order ─────
+// Points are sorted by time so each leg's direction (and colour) always follows the chart from
+// left to right, even if the points were clicked or dragged out of order.
+int N    = 4
+int LAST = N - 1
+
+array<int>   rawTime  = array.from(t1, t2, t3, t4)
+array<float> rawPrice = array.from(p1, p2, p3, p4)
+array<int>   sortIdx  = rawTime.sort_indices(order.ascending)
+array<int>   pTime    = array.new<int>()
+array<float> pPrice   = array.new<float>()
+for k in sortIdx
+    pTime.push(rawTime.get(k))
+    pPrice.push(rawPrice.get(k))
+
 // ───── Locate the bar under each point ─────
-array<int>   pTime  = array.from(t1, t2, t3)
-array<float> pPrice = array.from(p1, p2, p3)
+var array<int>   pIdx  = array.new<int>(N, na)
+var array<float> pHigh = array.new<float>(N, na)
+var array<float> pLow  = array.new<float>(N, na)
 
-var array<int>   pIdx  = array.new<int>(3, na)
-var array<float> pHigh = array.new<float>(3, na)
-var array<float> pLow  = array.new<float>(3, na)
-
-for i = 0 to 2
+for i = 0 to LAST
     if na(pIdx.get(i)) and time >= pTime.get(i)
         pIdx.set(i, bar_index)
         pHigh.set(i, high)
@@ -48,7 +62,7 @@ pointPrice(int i) =>
     float result = raw
     if snapToWicks and not na(pIdx.get(i))
         float prevP  = i > 0 ? pPrice.get(i - 1) : na
-        float nextP  = i < 2 ? pPrice.get(i + 1) : na
+        float nextP  = i < LAST ? pPrice.get(i + 1) : na
         bool  isHigh = (na(prevP) or raw >= prevP) and (na(nextP) or raw >= nextP)
         bool  isLow  = (na(prevP) or raw <= prevP) and (na(nextP) or raw <= nextP)
         result := isHigh ? pHigh.get(i) : isLow ? pLow.get(i) : raw
@@ -70,7 +84,7 @@ if barstate.islast
     lines.clear()
     labels.clear()
 
-    for i = 0 to 1
+    for i = 0 to LAST - 1
         int   ta  = pTime.get(i)
         int   tb  = pTime.get(i + 1)
         float pa  = pointPrice(i)
