@@ -1,0 +1,96 @@
+//@version=6
+indicator("Swing Segment Boxes", "SwingBoxes", overlay = true, max_boxes_count = 20, max_lines_count = 20, max_labels_count = 20)
+
+// Pine Script cannot read drawings made with TradingView's own tools (Polyline, Path, etc.).
+// Instead, the three swing points are "interactive inputs": with `confirm = true`, TradingView
+// asks you to click each point on the chart when the indicator is added. Afterwards, select the
+// indicator and drag its handles to move the points, or edit them in the settings dialog.
+
+// ───── Swing points ─────
+int   t1 = input.time(timestamp("01 Jan 2024 00:00"), "Point 1", confirm = true, inline = "p1")
+float p1 = input.price(0.0, "", confirm = true, inline = "p1")
+int   t2 = input.time(timestamp("01 Feb 2024 00:00"), "Point 2", confirm = true, inline = "p2")
+float p2 = input.price(0.0, "", confirm = true, inline = "p2")
+int   t3 = input.time(timestamp("01 Mar 2024 00:00"), "Point 3", confirm = true, inline = "p3")
+float p3 = input.price(0.0, "", confirm = true, inline = "p3")
+
+// ───── Style ─────
+string GRP = "Style"
+bool  snapToWicks = input.bool(true, "Snap points to bar high/low", group = GRP,
+     tooltip = "Moves each point to the exact high (swing high) or low (swing low) of the bar you clicked.")
+color upFill   = input.color(color.new(color.green, 70), "Up      fill", inline = "up", group = GRP)
+color upBorder = input.color(color.new(color.black, 30), "border", inline = "up", group = GRP)
+color upLine   = input.color(color.green, "line", inline = "up", group = GRP)
+color dnFill   = input.color(color.new(color.red, 70), "Down  fill", inline = "dn", group = GRP)
+color dnBorder = input.color(color.new(color.black, 30), "border", inline = "dn", group = GRP)
+color dnLine   = input.color(color.red, "line", inline = "dn", group = GRP)
+bool  showLines  = input.bool(true, "Show diagonal lines", group = GRP)
+bool  showLabels = input.bool(true, "Show change labels", group = GRP)
+
+// ───── Locate the bar under each point ─────
+array<int>   pTime  = array.from(t1, t2, t3)
+array<float> pPrice = array.from(p1, p2, p3)
+
+var array<int>   pIdx  = array.new<int>(3, na)
+var array<float> pHigh = array.new<float>(3, na)
+var array<float> pLow  = array.new<float>(3, na)
+
+for i = 0 to 2
+    if na(pIdx.get(i)) and time >= pTime.get(i)
+        pIdx.set(i, bar_index)
+        pHigh.set(i, high)
+        pLow.set(i, low)
+
+// Price of point `i`, optionally snapped to its bar's high/low depending on whether it is a
+// swing high (above its neighbours) or a swing low (below its neighbours).
+pointPrice(int i) =>
+    float raw    = pPrice.get(i)
+    float result = raw
+    if snapToWicks and not na(pIdx.get(i))
+        float prevP  = i > 0 ? pPrice.get(i - 1) : na
+        float nextP  = i < 2 ? pPrice.get(i + 1) : na
+        bool  isHigh = (na(prevP) or raw >= prevP) and (na(nextP) or raw >= nextP)
+        bool  isLow  = (na(prevP) or raw <= prevP) and (na(nextP) or raw <= nextP)
+        result := isHigh ? pHigh.get(i) : isLow ? pLow.get(i) : raw
+    result
+
+// ───── Draw ─────
+var array<box>   boxes  = array.new<box>()
+var array<line>  lines  = array.new<line>()
+var array<label> labels = array.new<label>()
+
+if barstate.islast
+    for b in boxes
+        b.delete()
+    for l in lines
+        l.delete()
+    for lb in labels
+        lb.delete()
+    boxes.clear()
+    lines.clear()
+    labels.clear()
+
+    for i = 0 to 1
+        int   ta  = pTime.get(i)
+        int   tb  = pTime.get(i + 1)
+        float pa  = pointPrice(i)
+        float pb  = pointPrice(i + 1)
+        bool  up  = pb >= pa
+        float top = math.max(pa, pb)
+        float bot = math.min(pa, pb)
+
+        boxes.push(box.new(ta, top, tb, bot, up ? upBorder : dnBorder, 1, xloc = xloc.bar_time, bgcolor = up ? upFill : dnFill))
+
+        if showLines
+            lines.push(line.new(ta, pa, tb, pb, xloc.bar_time, color = up ? upLine : dnLine, width = 1))
+
+        if showLabels
+            float  chg     = pb - pa
+            float  pct     = pa != 0 ? chg / pa * 100 : na
+            int    bars    = pIdx.get(i + 1) - pIdx.get(i)
+            string sign    = chg >= 0 ? "+" : ""
+            string barsTxt = na(bars) ? "" : "\n" + str.tostring(bars) + " bars"
+            string txt     = sign + str.tostring(chg, format.mintick) + " (" + sign + str.tostring(pct, "#.##") + "%)" + barsTxt
+            labels.push(label.new(math.round((ta + tb) / 2), up ? top : bot, txt, xloc.bar_time,
+                 style = up ? label.style_label_down : label.style_label_up,
+                 color = color.new(color.white, 100), textcolor = up ? upLine : dnLine, size = size.small))
