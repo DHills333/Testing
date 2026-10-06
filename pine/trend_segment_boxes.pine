@@ -202,7 +202,7 @@ if barstate.islast
                 ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
                      broken ? extend.none : extend.right, ctrlColor, ctrlStyle, ctrlWidth)
                 // Vertical label at the swing point: below a low, above a high.
-                ctrlLabel := label.new(x1, lvl, name + "\n" + str.tostring(lvl, format.mintick) + (broken ? "\nbroken" : ""), xloc.bar_index,
+                ctrlLabel := label.new(x1, lvl, name + (broken ? "\nbroken" : ""), xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_up : label.style_label_down,
                      color = color.new(color.white, 100), textcolor = ctrlColor, size = swingSize)
 
@@ -214,6 +214,6 @@ if barstate.islast
                 int    o1    = pIdx.get(opp)
                 string oName = ctrlIsLow ? "P\nS\nH" : "P\nS\nL"
                 oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, oppStyle, oppWidth)
-                oppLabel := label.new(o1, oLvl, oName + "\n" + str.tostring(oLvl, format.mintick), xloc.bar_index,
+                oppLabel := label.new(o1, oLvl, oName, xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_down : label.style_label_up,
                      color = color.new(color.white, 100), textcolor = oppColor, size = swingSize)

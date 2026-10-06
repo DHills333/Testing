@@ -26,6 +26,6 @@ The indicator marks the controlling swing with a dashed blue line:
 
 The line extends right until a candle closes beyond it. The line then stops at that candle and the label adds "broken". If the four points make no higher high or lower low (a range), nothing is marked. It also marks the **prior opposite swing** with a dashed blue line: the swing just before the controlling one, on the other side. That's the prior swing high (**PSH**) for a CSL, or the prior swing low (**PSL**) for a CSH. It's the level the break of structure went through, and the line extends right.
 
-Each label sits on its swing point, below a low and above a high. The letters are stacked one per line so it reads vertically, with the price underneath. Pine can't rotate label text.
+Each label sits on its swing point, below a low and above a high. The letters are stacked one per line so it reads vertically. Pine can't rotate label text.
 
 Under **Controlling swing** in the settings you can turn either line off and set its colour, style (solid, dashed or dotted) and width. You can also set the swing label size there.
