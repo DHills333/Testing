@@ -24,4 +24,6 @@ The indicator marks the controlling swing with a dashed line and label:
 - **Uptrend** (the latest structure break is a higher high): the **Controlling Low** is the swing low that launched that higher high.
 - **Downtrend** (the latest structure break is a lower low): the **Controlling High** is the swing high that launched that lower low.
 
-The line extends right until a candle closes beyond it. The line then stops at that candle and the label says "(broken)". If the four points make no higher high or lower low (a range), nothing is marked. Turn it off or change its colour under **Controlling swing** in the settings.
+The line extends right until a candle closes beyond it. The line then stops at that candle and the label says "(broken)". If the four points make no higher high or lower low (a range), nothing is marked. It also marks the **prior opposite swing** with a dotted orange line: the swing just before the controlling one, on the other side. That's the **Prior Swing High** for a controlling low, or the **Prior Swing Low** for a controlling high. It's the level the break of structure went through, and the line extends right.
+
+Turn either one off, or change their colours, under **Controlling swing** in the settings.

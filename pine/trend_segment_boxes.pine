@@ -32,7 +32,10 @@ bool  showLabels = input.bool(true, "Show change labels", group = GRP)
 string GRP_CTRL = "Controlling swing"
 bool  showCtrl  = input.bool(true, "Show controlling swing", group = GRP_CTRL,
      tooltip = "Uptrend (latest structure break is a higher high): the swing low that made that high. Downtrend (latest break is a lower low): the swing high that made that low. A close beyond it marks it as broken.")
-color ctrlColor = input.color(color.blue, "Colour", group = GRP_CTRL)
+color ctrlColor = input.color(color.blue, "Controlling swing colour", group = GRP_CTRL)
+bool  showOpp   = input.bool(true, "Show prior opposite swing", group = GRP_CTRL,
+     tooltip = "The swing just before the controlling swing, on the other side: the prior swing high opposite a controlling low, or the prior swing low opposite a controlling high. This is the level the break of structure went through.")
+color oppColor  = input.color(color.orange, "Prior swing colour", group = GRP_CTRL)
 
 // ───── Put the points in time order ─────
 // Points are sorted by time so each leg's direction (and colour) always follows the chart from
@@ -79,6 +82,8 @@ var array<line>  lines  = array.new<line>()
 var array<label> labels = array.new<label>()
 var line         ctrlLine  = na
 var label        ctrlLabel = na
+var line         oppLine   = na
+var label        oppLabel  = na
 
 if barstate.islast
     for b in boxes
@@ -92,6 +97,8 @@ if barstate.islast
     labels.clear()
     ctrlLine.delete()
     ctrlLabel.delete()
+    oppLine.delete()
+    oppLabel.delete()
 
     for i = 0 to LAST - 1
         int   ta  = pTime.get(i)
@@ -127,7 +134,7 @@ if barstate.islast
     // previous swing high (higher high = uptrend) or a swing low below the previous swing low
     // (lower low = downtrend). The swing just before that break is the controlling swing: the
     // low that launched the higher high, or the high that launched the lower low.
-    if showCtrl
+    if showCtrl or showOpp
         int  ctrl      = na
         int  conf      = na
         bool ctrlIsLow = false
@@ -165,9 +172,22 @@ if barstate.islast
             bool   broken = not na(brokeAt)
             string name   = ctrlIsLow ? "Controlling Low" : "Controlling High"
             int    x2     = broken ? brokeAt : bar_index
-            ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
-                 broken ? extend.none : extend.right, ctrlColor, line.style_dashed, 2)
-            // Centred along the line: from the swing to the breaking candle, or to the latest candle.
-            ctrlLabel := label.new(math.round((x1 + x2) / 2), lvl, name + " " + str.tostring(lvl, format.mintick) + (broken ? " (broken)" : ""), xloc.bar_index,
-                 style = ctrlIsLow ? label.style_label_up : label.style_label_down,
-                 color = color.new(color.white, 100), textcolor = ctrlColor, size = size.small)
+            if showCtrl
+                ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
+                     broken ? extend.none : extend.right, ctrlColor, line.style_dashed, 2)
+                // Centred along the line: from the swing to the breaking candle, or to the latest candle.
+                ctrlLabel := label.new(math.round((x1 + x2) / 2), lvl, name + " " + str.tostring(lvl, format.mintick) + (broken ? " (broken)" : ""), xloc.bar_index,
+                     style = ctrlIsLow ? label.style_label_up : label.style_label_down,
+                     color = color.new(color.white, 100), textcolor = ctrlColor, size = size.small)
+
+            // Prior opposite swing: the swing just before the controlling one (a high before a
+            // controlling low, or a low before a controlling high), i.e. the level that was broken.
+            int opp = ctrl - 1
+            if showOpp and not na(pIdx.get(opp))
+                float  oLvl  = pointPrice(opp)
+                int    o1    = pIdx.get(opp)
+                string oName = ctrlIsLow ? "Prior Swing High" : "Prior Swing Low"
+                oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, line.style_dotted, 2)
+                oppLabel := label.new(math.round((o1 + bar_index) / 2), oLvl, oName + " " + str.tostring(oLvl, format.mintick), xloc.bar_index,
+                     style = ctrlIsLow ? label.style_label_down : label.style_label_up,
+                     color = color.new(color.white, 100), textcolor = oppColor, size = size.small)
