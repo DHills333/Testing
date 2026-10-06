@@ -18,3 +18,10 @@ To chain more legs, add the indicator again and start its Point 1 where the prev
 - **Snap points to bar high/low**: moves each point to the exact wick of the bar you clicked (high for swing highs, low for swing lows).
 - Fill, border and line colours for up and down legs.
 - Toggle the diagonal lines and change labels.
+
+## Controlling swing
+The indicator marks the controlling swing with a dashed line and label:
+- **Uptrend** (the latest structure break is a higher high): the **Controlling Low** is the swing low that launched that higher high.
+- **Downtrend** (the latest structure break is a lower low): the **Controlling High** is the swing high that launched that lower low.
+
+The line extends right until a candle closes beyond it. The line then stops at that candle and the label says "(broken)". If the four points make no higher high or lower low (a range), nothing is marked. Turn it off or change its colour under **Controlling swing** in the settings.
