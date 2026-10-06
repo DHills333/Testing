@@ -30,12 +30,12 @@ bool  showLines  = input.bool(true, "Show diagonal lines", group = GRP)
 bool  showLabels = input.bool(true, "Show change labels", group = GRP)
 
 string GRP_CTRL = "Controlling swing"
-bool  showCtrl  = input.bool(true, "Show controlling swing", group = GRP_CTRL,
+bool  showCtrl  = input.bool(true, "Show controlling swing (CSH/CSL)", group = GRP_CTRL,
      tooltip = "Uptrend (latest structure break is a higher high): the swing low that made that high. Downtrend (latest break is a lower low): the swing high that made that low. A close beyond it marks it as broken.")
 color ctrlColor = input.color(color.blue, "Controlling swing colour", group = GRP_CTRL)
-bool  showOpp   = input.bool(true, "Show prior opposite swing", group = GRP_CTRL,
+bool  showOpp   = input.bool(true, "Show prior opposite swing (PSH/PSL)", group = GRP_CTRL,
      tooltip = "The swing just before the controlling swing, on the other side: the prior swing high opposite a controlling low, or the prior swing low opposite a controlling high. This is the level the break of structure went through.")
-color oppColor  = input.color(color.orange, "Prior swing colour", group = GRP_CTRL)
+color oppColor  = input.color(color.blue, "Prior swing colour", group = GRP_CTRL)
 
 // ───── Put the points in time order ─────
 // Points are sorted by time so each leg's direction (and colour) always follows the chart from
@@ -170,13 +170,14 @@ if barstate.islast
                         brokeAt := j
                         break
             bool   broken = not na(brokeAt)
-            string name   = ctrlIsLow ? "Controlling Low" : "Controlling High"
+            // Pine labels can't rotate text, so the letters are stacked one per line to read vertically.
+            string name   = ctrlIsLow ? "C\nS\nL" : "C\nS\nH"
             int    x2     = broken ? brokeAt : bar_index
             if showCtrl
                 ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
                      broken ? extend.none : extend.right, ctrlColor, line.style_dashed, 2)
-                // Centred along the line: from the swing to the breaking candle, or to the latest candle.
-                ctrlLabel := label.new(math.round((x1 + x2) / 2), lvl, name + " " + str.tostring(lvl, format.mintick) + (broken ? " (broken)" : ""), xloc.bar_index,
+                // Vertical label at the swing point: below a low, above a high.
+                ctrlLabel := label.new(x1, lvl, name + "\n" + str.tostring(lvl, format.mintick) + (broken ? "\nbroken" : ""), xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_up : label.style_label_down,
                      color = color.new(color.white, 100), textcolor = ctrlColor, size = size.small)
 
@@ -186,8 +187,8 @@ if barstate.islast
             if showOpp and not na(pIdx.get(opp))
                 float  oLvl  = pointPrice(opp)
                 int    o1    = pIdx.get(opp)
-                string oName = ctrlIsLow ? "Prior Swing High" : "Prior Swing Low"
-                oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, line.style_dotted, 2)
-                oppLabel := label.new(math.round((o1 + bar_index) / 2), oLvl, oName + " " + str.tostring(oLvl, format.mintick), xloc.bar_index,
+                string oName = ctrlIsLow ? "P\nS\nH" : "P\nS\nL"
+                oppLine  := line.new(o1, oLvl, bar_index, oLvl, xloc.bar_index, extend.right, oppColor, line.style_dashed, 2)
+                oppLabel := label.new(o1, oLvl, oName + "\n" + str.tostring(oLvl, format.mintick), xloc.bar_index,
                      style = ctrlIsLow ? label.style_label_down : label.style_label_up,
                      color = color.new(color.white, 100), textcolor = oppColor, size = size.small)

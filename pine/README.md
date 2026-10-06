@@ -20,10 +20,12 @@ To chain more legs, add the indicator again and start its Point 1 where the prev
 - Toggle the diagonal lines and change labels.
 
 ## Controlling swing
-The indicator marks the controlling swing with a dashed line and label:
-- **Uptrend** (the latest structure break is a higher high): the **Controlling Low** is the swing low that launched that higher high.
-- **Downtrend** (the latest structure break is a lower low): the **Controlling High** is the swing high that launched that lower low.
+The indicator marks the controlling swing with a dashed blue line:
+- **Uptrend** (the latest structure break is a higher high): the controlling swing low (**CSL**) is the swing low that launched that higher high.
+- **Downtrend** (the latest structure break is a lower low): the controlling swing high (**CSH**) is the swing high that launched that lower low.
 
-The line extends right until a candle closes beyond it. The line then stops at that candle and the label says "(broken)". If the four points make no higher high or lower low (a range), nothing is marked. It also marks the **prior opposite swing** with a dotted orange line: the swing just before the controlling one, on the other side. That's the **Prior Swing High** for a controlling low, or the **Prior Swing Low** for a controlling high. It's the level the break of structure went through, and the line extends right.
+The line extends right until a candle closes beyond it. The line then stops at that candle and the label adds "broken". If the four points make no higher high or lower low (a range), nothing is marked. It also marks the **prior opposite swing** with a dashed blue line: the swing just before the controlling one, on the other side. That's the prior swing high (**PSH**) for a CSL, or the prior swing low (**PSL**) for a CSH. It's the level the break of structure went through, and the line extends right.
+
+Each label sits on its swing point, below a low and above a high. The letters are stacked one per line so it reads vertically, with the price underneath. Pine can't rotate label text.
 
 Turn either one off, or change their colours, under **Controlling swing** in the settings.
