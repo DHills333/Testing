@@ -164,8 +164,10 @@ if barstate.islast
                         break
             bool   broken = not na(brokeAt)
             string name   = ctrlIsLow ? "Controlling Low" : "Controlling High"
-            ctrlLine  := line.new(x1, lvl, broken ? brokeAt : bar_index, lvl, xloc.bar_index,
+            int    x2     = broken ? brokeAt : bar_index
+            ctrlLine  := line.new(x1, lvl, x2, lvl, xloc.bar_index,
                  broken ? extend.none : extend.right, ctrlColor, line.style_dashed, 2)
-            ctrlLabel := label.new(x1, lvl, name + " " + str.tostring(lvl, format.mintick) + (broken ? " (broken)" : ""), xloc.bar_index,
+            // Centred along the line: from the swing to the breaking candle, or to the latest candle.
+            ctrlLabel := label.new(math.round((x1 + x2) / 2), lvl, name + " " + str.tostring(lvl, format.mintick) + (broken ? " (broken)" : ""), xloc.bar_index,
                  style = ctrlIsLow ? label.style_label_up : label.style_label_down,
                  color = color.new(color.white, 100), textcolor = ctrlColor, size = size.small)
