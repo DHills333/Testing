@@ -1,10 +1,10 @@
-# Swing Segment Boxes (TradingView / Pine Script v6)
+# Trend Segment Boxes (TradingView / Pine Script v6)
 
 Draws a shaded box over each leg between four swing points (three legs), with a diagonal line through it:
 green for up legs, red for down legs. Labels show the price change, % change and candle count.
 
 ## Install
-1. In TradingView, open the **Pine Editor**, paste in `swing_segment_boxes.pine`, and click **Add to chart**.
+1. In TradingView, open the **Pine Editor**, paste in `trend_segment_boxes.pine`, and click **Add to chart**.
 2. TradingView then asks you to click **Point 1** to **Point 4** on the chart, e.g. swing low, high, low, high. The points are sorted by time, so click order does not affect the colours.
 3. To adjust afterwards, select the indicator and drag the point handles, or edit the times/prices in its settings.
 
