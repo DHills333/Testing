@@ -42,5 +42,6 @@ NOTES AND LIMITATIONS
 • Everything drawn depends on the points you choose. Different swing choices produce different boxes and levels.
 • The script works on any symbol and timeframe. Points snap to the candle under the selected time, so changing the timeframe can move a point to a different candle.
 • The script can't read drawings made with TradingView's own drawing tools. Its points are set only through its own inputs.
+• This is an indicator, not a drawing tool. TradingView attaches indicators to the chart layout rather than to a symbol, so it stays on the chart when you switch symbols. Set "Show only on symbol" to keep the drawings on the stock you marked up, or use a separate chart layout for each stock. If you need markings that stay with the symbol, TradingView's own Date and Price Range and Horizontal Ray drawing tools can show similar information. With those, you identify the levels yourself and breaks aren't detected.
 
 This tool is for chart analysis and education. It doesn't predict future price movement and isn't financial advice.

@@ -9,6 +9,13 @@ green for up legs, red for down legs. Labels show the price change, % change and
 3. TradingView also asks you to confirm **Show only on symbol**. Set it to the symbol you placed the points on (for example `NASDAQ:AAPL`). The indicator stays on the chart when you switch symbols, because TradingView keeps indicators per chart layout, but it draws nothing on other symbols. Leave it empty to draw on every symbol.
 4. To adjust afterwards, select the indicator and drag the point handles, or edit the times/prices in its settings.
 
+## Note: indicator, not a drawing
+TradingView attaches indicators to the chart layout, not to a symbol. Pine Script can't create drawing tools, so this indicator stays on the chart when you switch symbols. To keep your swing points with one stock:
+- Set **Show only on symbol** to that stock. The indicator draws nothing on other symbols, and everything reappears when you switch back.
+- Or save a separate chart layout for each stock you mark up.
+
+If you'd rather have markings that stay with the stock like a drawing, use TradingView's own **Date and Price Range** tool for each leg. It shows the price change, % change and bar count. Use **Horizontal Ray** drawings for the controlling and prior swing levels. Those drawings stay with the symbol, but you have to identify the levels yourself and they won't mark breaks.
+
 ## Why not the Polyline tool?
 Pine Script can't read drawings you made with TradingView's own tools (Polyline, Path, Trend Line…).
 Interactive `input.time` / `input.price` points are the closest supported equivalent: you still click the swing points on the chart, and the indicator draws the boxes.
