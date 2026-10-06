@@ -12,7 +12,7 @@ Swing points
 Leg boxes
 • Each leg between two consecutive points is drawn as a box spanning the leg's price range and time.
 • Rising legs use the "Up" colors and falling legs use the "Down" colors. A diagonal line connects the two swing points.
-• A label on each leg shows the price change, the percentage change and the number of candles in the leg. It is centered on the leg, half a line above the box for up legs and half a line below it for down legs.
+• A label on each leg shows the price change, the percentage change and the number of candles in the leg. It is centered on the leg, above the box for up legs and below it for down legs.
 
 Controlling swing (CSH / CSL)
 • The script looks back from the newest point for the most recent break of structure among your four points. That is a swing high above the previous swing high (a higher high) or a swing low below the previous swing low (a lower low).

@@ -28,6 +28,6 @@ The line extends right until a candle closes beyond it. The line then stops at t
 
 It also marks the **prior opposite swing** with a dashed blue line: the swing just before the controlling one, on the other side. That's the prior swing high (**PSH**) for a CSL, or the prior swing low (**PSL**) for a CSH. It's the level the break of structure went through, and the line extends right.
 
-Each label is centered on its swing point, half a line under a low or over a high.
+Each label sits on its line just to the right of the swing point: under the line for a low, over it for a high.
 
 Under **Controlling swing** in the settings you can turn either line off and set its color, style (solid, dashed or dotted) and width. You can also set the swing label size there.
