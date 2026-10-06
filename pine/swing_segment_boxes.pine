@@ -2,7 +2,7 @@
 indicator("Swing Segment Boxes", "SwingBoxes", overlay = true, max_boxes_count = 20, max_lines_count = 20, max_labels_count = 20)
 
 // Pine Script cannot read drawings made with TradingView's own tools (Polyline, Path, etc.).
-// Instead, the three swing points are "interactive inputs": with `confirm = true`, TradingView
+// Instead, the four swing points are "interactive inputs": with `confirm = true`, TradingView
 // asks you to click each point on the chart when the indicator is added. Afterwards, select the
 // indicator and drag its handles to move the points, or edit them in the settings dialog.
 
