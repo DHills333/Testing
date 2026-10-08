@@ -1,0 +1,839 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Crypto Analysis//Review schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Crypto Reviews
+BEGIN:VEVENT
+UID:crypto-review-2026-10-12@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Crypto reviews: BTC\, ENA
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess BTC\, ENA using the Crypto Analysis method").\nBTC: a
+  coin I hold (every 13 weeks)\nENA: a coin I hold (every 13 weeks)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: BTC\, ENA
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-10-19@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:Crypto reviews: ETH\, XRP
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ETH\, XRP using the Crypto Analysis method").\nETH: a
+  coin I hold (every 13 weeks)\nXRP: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ETH\, XRP
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-10-26@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:Crypto reviews: SOL\, UNI
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess SOL\, UNI using the Crypto Analysis method").\nSOL: a
+  coin I hold (every 13 weeks)\nUNI: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: SOL\, UNI
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-11-02@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Crypto reviews: NEAR\, AAVE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess NEAR\, AAVE using the Crypto Analysis method").\nNEAR
+ : a coin I hold (every 13 weeks)\nAAVE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: NEAR\, AAVE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-11-09@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:Crypto reviews: LINK\, TAO
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LINK\, TAO using the Crypto Analysis method").\nLINK:
+  a coin I hold (every 13 weeks)\nTAO: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LINK\, TAO
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-11-16@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Crypto reviews: ONDO\, BNB
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ONDO\, BNB using the Crypto Analysis method").\nONDO:
+  a coin I hold (every 13 weeks)\nBNB: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ONDO\, BNB
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-11-23@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:Crypto reviews: LTC\, RENDER
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LTC\, RENDER using the Crypto Analysis method").\nLTC
+ : a coin I hold (every 13 weeks)\nRENDER: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LTC\, RENDER
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-11-30@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Crypto reviews: HYPE\, SAND
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HYPE\, SAND using the Crypto Analysis method").\nHYPE
+ : a coin I hold (every 13 weeks)\nSAND: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HYPE\, SAND
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-12-07@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Crypto reviews: QNT\, XMR
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess QNT\, XMR using the Crypto Analysis method").\nQNT: a
+  coin I hold (every 13 weeks)\nXMR: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: QNT\, XMR
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-12-14@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:Crypto reviews: PAXG\, ZEC
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess PAXG\, ZEC using the Crypto Analysis method").\nPAXG:
+  a coin I hold (every 13 weeks)\nZEC: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: PAXG\, ZEC
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-12-21@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Crypto reviews: AVAX\, DOGE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess AVAX\, DOGE using the Crypto Analysis method").\nAVAX
+ : a coin I hold (every 13 weeks)\nDOGE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: AVAX\, DOGE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2026-12-28@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+SUMMARY:Crypto reviews: HBAR\, SHIB
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HBAR\, SHIB using the Crypto Analysis method").\nHBAR
+ : a coin I hold (every 13 weeks)\nSHIB: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HBAR\, SHIB
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-01-04@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:Crypto reviews: XLM\, USDC
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess XLM\, USDC using the Crypto Analysis method").\nXLM: 
+ a coin I hold (every 13 weeks)\nUSDC: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: XLM\, USDC
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-01-11@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270112
+SUMMARY:Crypto reviews: BTC\, ENA
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess BTC\, ENA using the Crypto Analysis method").\nBTC: a
+  coin I hold (every 13 weeks)\nENA: a coin I hold (every 13 weeks)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: BTC\, ENA
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-01-18@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:Crypto reviews: ETH\, USDT
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ETH\, USDT using the Crypto Analysis method").\nETH: 
+ a coin I hold (every 13 weeks)\nUSDT: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ETH\, USDT
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-01-25@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270126
+SUMMARY:Crypto reviews: SOL\, IMX
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess SOL\, IMX using the Crypto Analysis method").\nSOL: a
+  coin I hold (every 13 weeks)\nIMX: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: SOL\, IMX
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-02-01@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:Crypto reviews: NEAR\, RED
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess NEAR\, RED using the Crypto Analysis method").\nNEAR:
+  a coin I hold (every 13 weeks)\nRED: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: NEAR\, RED
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-02-08@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+SUMMARY:Crypto reviews: LINK\, FET
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LINK\, FET using the Crypto Analysis method").\nLINK:
+  a coin I hold (every 13 weeks)\nFET: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LINK\, FET
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-02-15@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270216
+SUMMARY:Crypto reviews: ONDO\, RAY
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ONDO\, RAY using the Crypto Analysis method").\nONDO:
+  a coin I hold (every 13 weeks)\nRAY: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ONDO\, RAY
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-02-22@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:Crypto reviews: LTC\, NIGHT
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LTC\, NIGHT using the Crypto Analysis method").\nLTC:
+  a coin I hold (every 13 weeks)\nNIGHT: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LTC\, NIGHT
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-03-01@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:Crypto reviews: HYPE\, POWR
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HYPE\, POWR using the Crypto Analysis method").\nHYPE
+ : a coin I hold (every 13 weeks)\nPOWR: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HYPE\, POWR
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-03-08@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270308
+DTEND;VALUE=DATE:20270309
+SUMMARY:Crypto reviews: QNT\, PEPE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess QNT\, PEPE using the Crypto Analysis method").\nQNT: 
+ a coin I hold (every 13 weeks)\nPEPE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: QNT\, PEPE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-03-15@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270315
+DTEND;VALUE=DATE:20270316
+SUMMARY:Crypto reviews: PAXG\, CRO
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess PAXG\, CRO using the Crypto Analysis method").\nPAXG:
+  a coin I hold (every 13 weeks)\nCRO: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: PAXG\, CRO
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-03-22@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270323
+SUMMARY:Crypto reviews: AVAX\, CAKE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess AVAX\, CAKE using the Crypto Analysis method").\nAVAX
+ : a coin I hold (every 13 weeks)\nCAKE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: AVAX\, CAKE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-03-29@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270329
+DTEND;VALUE=DATE:20270330
+SUMMARY:Crypto reviews: HBAR\, SKY
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HBAR\, SKY using the Crypto Analysis method").\nHBAR:
+  a coin I hold (every 13 weeks)\nSKY: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HBAR\, SKY
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-04-05@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270405
+DTEND;VALUE=DATE:20270406
+SUMMARY:Crypto reviews: XLM\, GRASS
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess XLM\, GRASS using the Crypto Analysis method").\nXLM:
+  a coin I hold (every 13 weeks)\nGRASS: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: XLM\, GRASS
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-04-12@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270412
+DTEND;VALUE=DATE:20270413
+SUMMARY:Crypto reviews: BTC\, ENA
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess BTC\, ENA using the Crypto Analysis method").\nBTC: a
+  coin I hold (every 13 weeks)\nENA: a coin I hold (every 13 weeks)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: BTC\, ENA
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-04-19@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270419
+DTEND;VALUE=DATE:20270420
+SUMMARY:Crypto reviews: ETH\, XRP
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ETH\, XRP using the Crypto Analysis method").\nETH: a
+  coin I hold (every 13 weeks)\nXRP: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ETH\, XRP
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-04-26@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270426
+DTEND;VALUE=DATE:20270427
+SUMMARY:Crypto reviews: SOL\, UNI
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess SOL\, UNI using the Crypto Analysis method").\nSOL: a
+  coin I hold (every 13 weeks)\nUNI: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: SOL\, UNI
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-05-03@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270503
+DTEND;VALUE=DATE:20270504
+SUMMARY:Crypto reviews: NEAR\, AAVE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess NEAR\, AAVE using the Crypto Analysis method").\nNEAR
+ : a coin I hold (every 13 weeks)\nAAVE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: NEAR\, AAVE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-05-10@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270511
+SUMMARY:Crypto reviews: LINK\, TAO
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LINK\, TAO using the Crypto Analysis method").\nLINK:
+  a coin I hold (every 13 weeks)\nTAO: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LINK\, TAO
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-05-17@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270517
+DTEND;VALUE=DATE:20270518
+SUMMARY:Crypto reviews: ONDO\, BNB
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ONDO\, BNB using the Crypto Analysis method").\nONDO:
+  a coin I hold (every 13 weeks)\nBNB: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ONDO\, BNB
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-05-24@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270524
+DTEND;VALUE=DATE:20270525
+SUMMARY:Crypto reviews: LTC\, RENDER
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LTC\, RENDER using the Crypto Analysis method").\nLTC
+ : a coin I hold (every 13 weeks)\nRENDER: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LTC\, RENDER
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-05-31@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270531
+DTEND;VALUE=DATE:20270601
+SUMMARY:Crypto reviews: HYPE\, SAND
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HYPE\, SAND using the Crypto Analysis method").\nHYPE
+ : a coin I hold (every 13 weeks)\nSAND: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HYPE\, SAND
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-06-07@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270607
+DTEND;VALUE=DATE:20270608
+SUMMARY:Crypto reviews: QNT\, XMR
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess QNT\, XMR using the Crypto Analysis method").\nQNT: a
+  coin I hold (every 13 weeks)\nXMR: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: QNT\, XMR
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-06-14@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270615
+SUMMARY:Crypto reviews: PAXG\, ZEC
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess PAXG\, ZEC using the Crypto Analysis method").\nPAXG:
+  a coin I hold (every 13 weeks)\nZEC: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: PAXG\, ZEC
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-06-21@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270621
+DTEND;VALUE=DATE:20270622
+SUMMARY:Crypto reviews: AVAX\, DOGE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess AVAX\, DOGE using the Crypto Analysis method").\nAVAX
+ : a coin I hold (every 13 weeks)\nDOGE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: AVAX\, DOGE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-06-28@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270628
+DTEND;VALUE=DATE:20270629
+SUMMARY:Crypto reviews: HBAR\, SHIB
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HBAR\, SHIB using the Crypto Analysis method").\nHBAR
+ : a coin I hold (every 13 weeks)\nSHIB: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HBAR\, SHIB
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-07-05@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270705
+DTEND;VALUE=DATE:20270706
+SUMMARY:Crypto reviews: XLM\, USDC
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess XLM\, USDC using the Crypto Analysis method").\nXLM: 
+ a coin I hold (every 13 weeks)\nUSDC: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: XLM\, USDC
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-07-12@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270712
+DTEND;VALUE=DATE:20270713
+SUMMARY:Crypto reviews: BTC\, ENA
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess BTC\, ENA using the Crypto Analysis method").\nBTC: a
+  coin I hold (every 13 weeks)\nENA: a coin I hold (every 13 weeks)
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: BTC\, ENA
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-07-19@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270719
+DTEND;VALUE=DATE:20270720
+SUMMARY:Crypto reviews: ETH\, USDT
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ETH\, USDT using the Crypto Analysis method").\nETH: 
+ a coin I hold (every 13 weeks)\nUSDT: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ETH\, USDT
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-07-26@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270726
+DTEND;VALUE=DATE:20270727
+SUMMARY:Crypto reviews: SOL\, IMX
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess SOL\, IMX using the Crypto Analysis method").\nSOL: a
+  coin I hold (every 13 weeks)\nIMX: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: SOL\, IMX
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-08-02@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270803
+SUMMARY:Crypto reviews: NEAR\, RED
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess NEAR\, RED using the Crypto Analysis method").\nNEAR:
+  a coin I hold (every 13 weeks)\nRED: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: NEAR\, RED
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-08-09@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270809
+DTEND;VALUE=DATE:20270810
+SUMMARY:Crypto reviews: LINK\, FET
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LINK\, FET using the Crypto Analysis method").\nLINK:
+  a coin I hold (every 13 weeks)\nFET: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LINK\, FET
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-08-16@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270816
+DTEND;VALUE=DATE:20270817
+SUMMARY:Crypto reviews: ONDO\, RAY
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess ONDO\, RAY using the Crypto Analysis method").\nONDO:
+  a coin I hold (every 13 weeks)\nRAY: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: ONDO\, RAY
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-08-23@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270823
+DTEND;VALUE=DATE:20270824
+SUMMARY:Crypto reviews: LTC\, NIGHT
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess LTC\, NIGHT using the Crypto Analysis method").\nLTC:
+  a coin I hold (every 13 weeks)\nNIGHT: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: LTC\, NIGHT
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-08-30@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270830
+DTEND;VALUE=DATE:20270831
+SUMMARY:Crypto reviews: HYPE\, POWR
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HYPE\, POWR using the Crypto Analysis method").\nHYPE
+ : a coin I hold (every 13 weeks)\nPOWR: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HYPE\, POWR
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-09-06@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270906
+DTEND;VALUE=DATE:20270907
+SUMMARY:Crypto reviews: QNT\, PEPE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess QNT\, PEPE using the Crypto Analysis method").\nQNT: 
+ a coin I hold (every 13 weeks)\nPEPE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: QNT\, PEPE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-09-13@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270913
+DTEND;VALUE=DATE:20270914
+SUMMARY:Crypto reviews: PAXG\, CRO
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess PAXG\, CRO using the Crypto Analysis method").\nPAXG:
+  a coin I hold (every 13 weeks)\nCRO: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: PAXG\, CRO
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-09-20@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270920
+DTEND;VALUE=DATE:20270921
+SUMMARY:Crypto reviews: AVAX\, CAKE
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess AVAX\, CAKE using the Crypto Analysis method").\nAVAX
+ : a coin I hold (every 13 weeks)\nCAKE: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: AVAX\, CAKE
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-09-27@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20270927
+DTEND;VALUE=DATE:20270928
+SUMMARY:Crypto reviews: HBAR\, SKY
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess HBAR\, SKY using the Crypto Analysis method").\nHBAR:
+  a coin I hold (every 13 weeks)\nSKY: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: HBAR\, SKY
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:crypto-review-2027-10-04@crypto-analysis
+DTSTAMP:20261008T115839Z
+DTSTART;VALUE=DATE:20271004
+DTEND;VALUE=DATE:20271005
+SUMMARY:Crypto reviews: XLM\, GRASS
+DESCRIPTION:Reassess with the Crypto Analysis method (in a chat inside the
+  Project: "Reassess XLM\, GRASS using the Crypto Analysis method").\nXLM:
+  a coin I hold (every 13 weeks)\nGRASS: every 26 weeks
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Crypto reviews this week: XLM\, GRASS
+TRIGGER:PT8H
+END:VALARM
+END:VEVENT
+END:VCALENDAR
